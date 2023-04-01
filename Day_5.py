@@ -39,11 +39,8 @@ def starOne():
     for numPop in range (0, allMoves[i][0]):
       popValue = allCrates[allMoves[i][1]-1].pop()   
       allCrates[allMoves[i][2]-1].append(popValue)
-  #Grabs top crates of each stack
-  topCrates = ""
-  for i in range(0,numLines):
-    topCrates += allCrates[i].pop()
-  return topCrates
+  #Grabs top crates of each stack and returns it
+  return "".join([e.pop() for e in allCrates])
 
 #Iterates through and moves crates MULTIPLE at a time
 def starTwo():
@@ -56,11 +53,8 @@ def starTwo():
     #Reverses list then appends.
     cratesMoving.reverse()
     allCrates[allMoves[i][2]-1] += cratesMoving
-  #Grabs top crates of each stack
-  topCrates = ""
-  for i in range(0,numLines):
-    topCrates += allCrates[i].pop()
-  return topCrates
+  #Grabs top crates of each stack and returns it
+  return "".join([e.pop() for e in allCrates])
   
 print(starOne())
 print(starTwo())
