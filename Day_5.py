@@ -22,12 +22,10 @@ def getCrates():
 
 #Clean inputs of move commands from data
 def getMoveInput():
-  splitSpaces = [list.split(" ") for list in cleanedData]
-  start = numLines +2
-  end = len(splitSpaces)
+  splitSpaces = [list.split(" ") for list in cleanedData[numLines+2:]]
   allMoves = []
-  for i in range(start, end):
-    move = [int(splitSpaces[i][1]), int(splitSpaces[i][3]), int(splitSpaces[i][5])]
+  for line in splitSpaces:
+    move = [int(line[1]), int(line[3]), int(line[5])]
     allMoves.append(move)
   return allMoves
 
